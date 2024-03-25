@@ -25,7 +25,7 @@ struct CreateNewTask: View {
                     .listRowBackground(Color.clear)
                 
                 Section("Date and Time") {
-                    DatePicker("", selection: $dateAndTime, displayedComponents: [.date, .hourAndMinute])
+                    DatePicker("", selection: $dateAndTime, in: Date()..., displayedComponents: [.date, .hourAndMinute])
                         .datePickerStyle(.graphical)
                 }
                 

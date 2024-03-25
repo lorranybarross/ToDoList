@@ -14,7 +14,6 @@ struct InitialTasks: View {
     var body: some View {
         NavigationStack {
             VStack {
-                // MARK: List
                 if taskList.isEmpty {
                     NoTasks()
                 } else {
@@ -26,7 +25,9 @@ struct InitialTasks: View {
                                 TaskCard(task: task)
                             }
                         }
+                        .listRowBackground(Color.gray.opacity(0.1))
                     }
+                    .scrollContentBackground(.hidden)
                 }
                 
                 Spacer()
@@ -46,12 +47,14 @@ struct InitialTasks: View {
             }
         }
         .onAppear {
-            loadTasks()
+            Task {
+                await loadTasks()
+            }
         }
     }
     
     // MARK: - Methods
-    func loadTasks() {
+    func loadTasks() async {
         taskList = TaskDefaultHelper().getTaskList()
     }
 }

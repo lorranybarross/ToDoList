@@ -11,19 +11,20 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 40) {
-                Text("Desafio App ToDo List\nComece agora:")
+                Text("App ToDo List Challenge\nStart now:")
                     .multilineTextAlignment(.center)
                 
                 NavigationLink {
                     InitialTasks()
                 } label: {
-                    Text("CRIAR TAREFAS")
-                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    Text("CREATE TASKS")
+                        .padding()
                         .frame(maxWidth: .infinity, maxHeight: 120)
                         .background(.black)
                         .foregroundStyle(.white.opacity(0.75))
                         .font(.title2)
                         .bold()
+                        .clipShape(.rect(cornerRadius: 20))
                 }
             }
             .padding()

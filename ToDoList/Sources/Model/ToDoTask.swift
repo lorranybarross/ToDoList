@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class ToDoTask: Identifiable, Codable {
     let id: UUID
     var title: String

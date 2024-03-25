@@ -9,42 +9,43 @@ import SwiftUI
 
 struct EditTask: View {
     
-    let task: ToDoTask
+    @Bindable var task: ToDoTask
     
     @Environment(\.dismiss) private var dismiss
     
-    @State private var title = "Hi"
-    @State private var dateAndTime = Date()
-//    @State private var date = ""
-//    @State private var time = ""
-//    @State private var showTimePicker = false
-    
-    func loadInfo() {
-        self.title = task.title
-        self.dateAndTime = task.dateTime
-    }
+    @State private var showAlert = false
     
     var body: some View {
         NavigationStack {
             Form {
-                TextEditor(text: $title)
+                TextEditor(text: $task.title)
                     .clipShape(.rect(cornerRadius: 10))
                 
                 Section("Date and Time") {
-                    DatePicker("", selection: $dateAndTime, displayedComponents: [.date, .hourAndMinute])
+                    DatePicker("Data and Time", selection: $task.dateTime, in: Date()...)
                         .datePickerStyle(.graphical)
                 }
                 
                 HStack {
                     Spacer()
                     
+                    // MARK: Delete Button
+                    Button("Delete") {
+                        showAlert = true
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, 10)
+                    .background(.red)
+                    .foregroundStyle(.white)
+                    .font(.headline)
+                    .clipShape(.rect(cornerRadius: 10))
+                    .alert("Are you sure?", isPresented: $showAlert) {
+                        Button("OK") {}
+                    }
+                    
+                    // MARK: Save Button
                     Button("Save") {
-//                        let task = ToDoTask(
-//                            title: title.isEmpty ? "Untitled" : title,
-//                            date: date,
-//                            time: time
-//                        )
-//                        ManageTaskController().createTask(task: task)
+                        ManageTaskController().updateTask(task: task)
                         dismiss()
                     }
                     .padding(.horizontal)
@@ -59,15 +60,11 @@ struct EditTask: View {
             }
             .navigationTitle("Edit your task")
             .navigationBarTitleDisplayMode(.large)
-            
-        }
-        .onAppear {
-            loadInfo()
         }
     }
 }
 
 #Preview {
-    let example = ToDoTask(title: "My new task", dateTime: Date())
+    let example = ToDoTask(title: "My new task", dateTime: Date().addingTimeInterval(86400 * 3))
     return EditTask(task: example)
 }

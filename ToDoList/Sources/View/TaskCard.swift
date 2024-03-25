@@ -30,9 +30,7 @@ struct TaskCard: View {
             }
             
             Text(task.title)
-                .font(.title3)
-            
-            Divider()
+                .font(.title3)            
         }
     }
 }
