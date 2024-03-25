@@ -12,7 +12,7 @@ struct CreateNewTask: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var title = ""
-    @State private var dateAndTime = Set<DateComponents>()
+    @State private var dateAndTime = Date()
     @State private var showTimePicker = false
     
     var body: some View {
@@ -25,9 +25,8 @@ struct CreateNewTask: View {
                     .listRowBackground(Color.clear)
                 
                 Section("Date and Time") {
-                    MultiDatePicker("", selection: $dateAndTime)
-//                    DatePicker("", selection: $dateAndTime, displayedComponents: [.date, .hourAndMinute])
-//                        .datePickerStyle(.graphical)
+                    DatePicker("", selection: $dateAndTime, displayedComponents: [.date, .hourAndMinute])
+                        .datePickerStyle(.graphical)
                 }
                 
                 HStack {
@@ -36,7 +35,7 @@ struct CreateNewTask: View {
                     Button("Save") {
                         let task = ToDoTask(
                             title: title.isEmpty ? "Untitled" : title,
-                            dateTime: Date()/*dateAndTime*/
+                            dateTime: dateAndTime
                         )
                         ManageTaskController().createTask(task: task)
                         dismiss()

@@ -13,8 +13,4 @@ class ManageTaskController {
         list.append(task)
         TaskDefaultHelper().saveTaskList(list: list)
     }
-    
-    func updateTask(task: ToDoTask) {
-        
-    }
 }
