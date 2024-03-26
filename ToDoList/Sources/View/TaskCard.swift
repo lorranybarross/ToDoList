@@ -17,7 +17,13 @@ struct TaskCard: View {
                 HStack {
                     Text("Date:")
                         .fontWeight(.heavy)
-                    Text(task.dateToString())
+                    if Calendar.current.isDateInToday(task.dateTime) {
+                        Text("Today")
+                    } else if Calendar.current.isDateInTomorrow(task.dateTime) {
+                        Text("Tomorrow")
+                    } else {
+                        Text(task.dateToString())
+                    }
                 }
                 
                 Spacer()

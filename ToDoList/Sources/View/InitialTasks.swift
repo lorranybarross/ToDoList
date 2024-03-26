@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct InitialTasks: View {
     
-    @State private var taskList = [ToDoTask]()
-    
+    @Query var taskList: [ToDoTask]
+        
     var body: some View {
         NavigationStack {
             VStack {
@@ -20,12 +21,12 @@ struct InitialTasks: View {
                     List {
                         ForEach(taskList) { task in
                             NavigationLink {
-                                EditTask(task: task)
+                                CreateOrEditTask(task: task)
                             } label: {
                                 TaskCard(task: task)
                             }
                         }
-                        .listRowBackground(Color.accentColor.opacity(0.1))
+                        .listRowBackground(Color.gray.opacity(0.1))
                     }
                     .scrollContentBackground(.hidden)
                 }
@@ -39,23 +40,13 @@ struct InitialTasks: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
-                        CreateNewTask()
+                        CreateOrEditTask(task: nil)
                     } label: {
                         Label("Add Task", systemImage: "plus")
                     }
                 }
             }
         }
-        .onAppear {
-            Task {
-                await loadTasks()
-            }
-        }
-    }
-    
-    // MARK: - Methods
-    func loadTasks() async {
-        taskList = TaskDefaultHelper().getTaskList()
     }
 }
 

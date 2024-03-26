@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import SwiftData
 
-@Observable
-class ToDoTask: Identifiable, Codable {
-    let id: UUID
+@Model
+class ToDoTask: Identifiable {
+    @Attribute(.unique) var id: UUID
     var title: String
     var dateTime: Date
-    var tags: [String]?
+    @Relationship(deleteRule: .cascade) var tags: [String]?
     
     init(id: UUID = UUID(), title: String, dateTime: Date, tags: [String]? = nil) {
         self.id = id

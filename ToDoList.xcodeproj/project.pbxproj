@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		52748A722BACA93B0000CBD5 /* TaskCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52748A712BACA93B0000CBD5 /* TaskCard.swift */; };
-		52748A752BACB23F0000CBD5 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52748A742BACB23F0000CBD5 /* TimePicker.swift */; };
-		52748A772BACBB450000CBD5 /* TimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52748A762BACBB450000CBD5 /* TimePickerController.swift */; };
 		52748A7A2BACC10F0000CBD5 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52748A792BACC10F0000CBD5 /* Date+.swift */; };
 		52748A7E2BACC88D0000CBD5 /* ToDoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52748A7D2BACC88D0000CBD5 /* ToDoTask.swift */; };
 		52748A812BACC9BB0000CBD5 /* TaskDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52748A802BACC9BB0000CBD5 /* TaskDefaultHelper.swift */; };
 		52748A832BACCDE70000CBD5 /* NoTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52748A822BACCDE70000CBD5 /* NoTasks.swift */; };
+		52B7F2F92BB2C15000889377 /* CreateOrEditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7F2F82BB2C15000889377 /* CreateOrEditTask.swift */; };
 		52DAFC822BAADD07004B1220 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAFC812BAADD07004B1220 /* ToDoListApp.swift */; };
 		52DAFC842BAADD07004B1220 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAFC832BAADD07004B1220 /* ContentView.swift */; };
 		52DAFC862BAADD08004B1220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52DAFC852BAADD08004B1220 /* Assets.xcassets */; };
@@ -21,19 +20,17 @@
 		52DAFC972BAAE059004B1220 /* InitialTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAFC962BAAE059004B1220 /* InitialTasks.swift */; };
 		52DAFC992BAAE8EF004B1220 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAFC982BAAE8EF004B1220 /* LoginController.swift */; };
 		52DAFC9B2BAAE913004B1220 /* ListTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAFC9A2BAAE913004B1220 /* ListTaskController.swift */; };
-		52DAFC9D2BAAE932004B1220 /* CreateNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAFC9C2BAAE932004B1220 /* CreateNewTask.swift */; };
 		52DAFC9F2BAAE9B0004B1220 /* ManageTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAFC9E2BAAE9B0004B1220 /* ManageTaskController.swift */; };
-		52EDBE632BADE6A1008E5B62 /* EditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EDBE622BADE6A1008E5B62 /* EditTask.swift */; };
+		52E9EB952BB2CD0B002A8288 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E9EB942BB2CD0B002A8288 /* ActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		52748A712BACA93B0000CBD5 /* TaskCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCard.swift; sourceTree = "<group>"; };
-		52748A742BACB23F0000CBD5 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
-		52748A762BACBB450000CBD5 /* TimePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerController.swift; sourceTree = "<group>"; };
 		52748A792BACC10F0000CBD5 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		52748A7D2BACC88D0000CBD5 /* ToDoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTask.swift; sourceTree = "<group>"; };
 		52748A802BACC9BB0000CBD5 /* TaskDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDefaultHelper.swift; sourceTree = "<group>"; };
 		52748A822BACCDE70000CBD5 /* NoTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTasks.swift; sourceTree = "<group>"; };
+		52B7F2F82BB2C15000889377 /* CreateOrEditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrEditTask.swift; sourceTree = "<group>"; };
 		52DAFC7E2BAADD07004B1220 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DAFC812BAADD07004B1220 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		52DAFC832BAADD07004B1220 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,9 +39,8 @@
 		52DAFC962BAAE059004B1220 /* InitialTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialTasks.swift; sourceTree = "<group>"; };
 		52DAFC982BAAE8EF004B1220 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		52DAFC9A2BAAE913004B1220 /* ListTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTaskController.swift; sourceTree = "<group>"; };
-		52DAFC9C2BAAE932004B1220 /* CreateNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTask.swift; sourceTree = "<group>"; };
 		52DAFC9E2BAAE9B0004B1220 /* ManageTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTaskController.swift; sourceTree = "<group>"; };
-		52EDBE622BADE6A1008E5B62 /* EditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTask.swift; sourceTree = "<group>"; };
+		52E9EB942BB2CD0B002A8288 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +57,7 @@
 		52748A732BACB1B40000CBD5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				52E9EB942BB2CD0B002A8288 /* ActionButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -136,7 +133,6 @@
 				52DAFC982BAAE8EF004B1220 /* LoginController.swift */,
 				52DAFC9A2BAAE913004B1220 /* ListTaskController.swift */,
 				52DAFC9E2BAAE9B0004B1220 /* ManageTaskController.swift */,
-				52748A762BACBB450000CBD5 /* TimePickerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -153,11 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				52DAFC962BAAE059004B1220 /* InitialTasks.swift */,
-				52DAFC9C2BAAE932004B1220 /* CreateNewTask.swift */,
 				52748A712BACA93B0000CBD5 /* TaskCard.swift */,
-				52748A742BACB23F0000CBD5 /* TimePicker.swift */,
 				52748A822BACCDE70000CBD5 /* NoTasks.swift */,
-				52EDBE622BADE6A1008E5B62 /* EditTask.swift */,
+				52B7F2F82BB2C15000889377 /* CreateOrEditTask.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -240,17 +234,15 @@
 				52748A7A2BACC10F0000CBD5 /* Date+.swift in Sources */,
 				52DAFC842BAADD07004B1220 /* ContentView.swift in Sources */,
 				52DAFC9B2BAAE913004B1220 /* ListTaskController.swift in Sources */,
-				52748A772BACBB450000CBD5 /* TimePickerController.swift in Sources */,
-				52EDBE632BADE6A1008E5B62 /* EditTask.swift in Sources */,
-				52DAFC9D2BAAE932004B1220 /* CreateNewTask.swift in Sources */,
+				52E9EB952BB2CD0B002A8288 /* ActionButton.swift in Sources */,
 				52DAFC9F2BAAE9B0004B1220 /* ManageTaskController.swift in Sources */,
 				52DAFC992BAAE8EF004B1220 /* LoginController.swift in Sources */,
 				52748A7E2BACC88D0000CBD5 /* ToDoTask.swift in Sources */,
 				52DAFC822BAADD07004B1220 /* ToDoListApp.swift in Sources */,
 				52748A832BACCDE70000CBD5 /* NoTasks.swift in Sources */,
-				52748A752BACB23F0000CBD5 /* TimePicker.swift in Sources */,
 				52748A722BACA93B0000CBD5 /* TaskCard.swift in Sources */,
 				52DAFC972BAAE059004B1220 /* InitialTasks.swift in Sources */,
+				52B7F2F92BB2C15000889377 /* CreateOrEditTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

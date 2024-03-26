@@ -13,7 +13,7 @@ struct NoTasks: View {
             Text("You don't have any tasks yet.")
                 .font(.callout)
             NavigationLink {
-                CreateNewTask()
+                CreateOrEditTask(task: nil)
             } label: {
                 Label("Create a new task", systemImage: "pencil")
                     .font(.title)
