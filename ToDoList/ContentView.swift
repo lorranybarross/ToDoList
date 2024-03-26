@@ -20,7 +20,7 @@ struct ContentView: View {
                     Text("CREATE TASKS")
                         .padding()
                         .frame(maxWidth: .infinity, maxHeight: 120)
-                        .background(.black)
+                        .background(.accent)
                         .foregroundStyle(.white.opacity(0.75))
                         .font(.title2)
                         .bold()

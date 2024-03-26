@@ -25,7 +25,7 @@ struct InitialTasks: View {
                                 TaskCard(task: task)
                             }
                         }
-                        .listRowBackground(Color.gray.opacity(0.1))
+                        .listRowBackground(Color.accentColor.opacity(0.1))
                     }
                     .scrollContentBackground(.hidden)
                 }

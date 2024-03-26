@@ -12,11 +12,13 @@ class ToDoTask: Identifiable, Codable {
     let id: UUID
     var title: String
     var dateTime: Date
+    var tags: [String]?
     
-    init(id: UUID = UUID(), title: String, dateTime: Date) {
+    init(id: UUID = UUID(), title: String, dateTime: Date, tags: [String]? = nil) {
         self.id = id
         self.title = title
         self.dateTime = dateTime
+        self.tags = tags
     }
     
     func dateToString() -> String {

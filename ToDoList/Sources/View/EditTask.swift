@@ -50,7 +50,7 @@ struct EditTask: View {
                     }
                     .padding(.horizontal)
                     .padding(.vertical, 10)
-                    .background(.blue)
+                    .background(.accent)
                     .foregroundStyle(.white)
                     .font(.headline)
                     .clipShape(.rect(cornerRadius: 10))

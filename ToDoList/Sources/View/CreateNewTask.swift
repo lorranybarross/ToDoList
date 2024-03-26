@@ -19,10 +19,7 @@ struct CreateNewTask: View {
         NavigationStack {
             Form {
                 TextField("Title", text: $title)
-                    .padding()
-                    .background(.gray.opacity(0.1))
                     .clipShape(.rect(cornerRadius: 10))
-                    .listRowBackground(Color.clear)
                 
                 Section("Date and Time") {
                     DatePicker("", selection: $dateAndTime, in: Date()..., displayedComponents: [.date, .hourAndMinute])
@@ -42,7 +39,7 @@ struct CreateNewTask: View {
                     }
                     .padding(.horizontal)
                     .padding(.vertical, 10)
-                    .background(.blue)
+                    .background(.accent)
                     .foregroundStyle(.white)
                     .font(.headline)
                     .clipShape(.rect(cornerRadius: 10))
