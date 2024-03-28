@@ -28,5 +28,11 @@ struct NoTasks: View {
 }
 
 #Preview {
-    NoTasks()
+    do {
+        let previewer = try Previewer()
+        return NoTasks()
+            .modelContainer(previewer.container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
 }

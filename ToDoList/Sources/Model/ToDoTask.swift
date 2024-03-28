@@ -10,23 +10,27 @@ import SwiftData
 
 @Model
 class ToDoTask: Identifiable {
-    @Attribute(.unique) var id: UUID
+    @Attribute(.unique)
+    var id: UUID = UUID()
     var title: String
-    var dateTime: Date
-    @Relationship(deleteRule: .cascade) var tags: [String]?
+    var details: String?
+    var startDate: Date
+    var endDate: Date
+    @Relationship(deleteRule: .cascade)
+    var tags = [Tag]()
     
-    init(id: UUID = UUID(), title: String, dateTime: Date, tags: [String]? = nil) {
-        self.id = id
+    init(title: String, details: String? = nil, startDate: Date, endDate: Date) {
+        self.details = details
         self.title = title
-        self.dateTime = dateTime
-        self.tags = tags
+        self.startDate = startDate
+        self.endDate = endDate
     }
     
-    func dateToString() -> String {
-        Date().convertDateToString(date: dateTime, dateFormatter: "dd/MM/yyyy")
+    func dateToString(date: Date) -> String {
+        Date().convertDateToString(date: date, dateFormatter: "dd/MM/yy")
     }
     
-    func timeToString() -> String {
-        Date().convertDateToString(date: dateTime, dateFormatter: "HH:mm")
+    func timeToString(date: Date) -> String {
+        Date().convertDateToString(date: date, dateFormatter: "HH:mm")
     }
 }

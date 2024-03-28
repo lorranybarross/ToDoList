@@ -12,23 +12,15 @@ struct InitialTasks: View {
     
     @Query var taskList: [ToDoTask]
         
+    @State private var searchText = ""
+            
     var body: some View {
         NavigationStack {
             VStack {
                 if taskList.isEmpty {
                     NoTasks()
                 } else {
-                    List {
-                        ForEach(taskList) { task in
-                            NavigationLink {
-                                CreateOrEditTask(task: task)
-                            } label: {
-                                TaskCard(task: task)
-                            }
-                        }
-                        .listRowBackground(Color.gray.opacity(0.1))
-                    }
-                    .scrollContentBackground(.hidden)
+                    TaskList(searchString: searchText)
                 }
                 
                 Spacer()
@@ -36,7 +28,6 @@ struct InitialTasks: View {
             .navigationTitle("ToDo List")
             .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden()
-            .padding()
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
@@ -46,10 +37,17 @@ struct InitialTasks: View {
                     }
                 }
             }
+            .searchable(text: $searchText, isPresented: .constant(!taskList.isEmpty), placement: .navigationBarDrawer(displayMode: .automatic))
         }
     }
 }
 
 #Preview {
-    InitialTasks()
+    do {
+        let previewer = try Previewer()
+        return InitialTasks()
+            .modelContainer(previewer.container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
 }
